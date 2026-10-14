@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fundos</title>
+<meta name="description" content="We’re building an AI-native operating system for VC and PE investors, from sourcing to LP reporting. The design rule: reproduce a claim from primary evidence, refute it, or abstain.">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://transfrm.in/fundos">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fundos">
+<meta property="og:description" content="We’re building an AI-native operating system for VC and PE investors, from sourcing to LP reporting. The design rule: reproduce a claim from primary evidence, refute it, or abstain.">
+<meta property="og:url" content="https://transfrm.in/fundos">
+<meta property="og:image" content="https://transfrm.in/fundos/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0D'/%3E%3Ctext x='16' y='23' font-family='ui-monospace,Menlo,monospace' font-size='22' font-weight='600' text-anchor='middle' fill='%23E8EAED'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <span class="wordmark">FUNDOS</span>
+    <div class="bar-right">
+      <span class="meta">Private beta</span>
+      <a class="cta-link" href="mailto:rachitt@transfrm.in?subject=Fundos%20private%20beta&amp;body=Hi%2C%20I%27d%20love%20to%20try%20out%20Fundos%20by%20Transfrm%20Labs">request access</a>
+    </div>
+  </div>
+</header>
+
+<main id="content" tabindex="-1">
+
+  <!-- B + C: hero copy beside the Fact Ledger. The ledger is the hero visual. -->
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <h1><span>Investment work.</span> <span>With a verdict on every claim.</span></h1>
+      <p class="lead">We’re building an AI-native operating system for VC and PE investors, from sourcing to LP reporting. The design rule: reproduce a claim from primary evidence, refute it, or abstain.</p>
+    </div>
+
+    <section class="ledger-section" aria-labelledby="ledger-title">
+      <h2 id="ledger-title">The Fact Ledger</h2>
+      <p class="disclosure">Illustrative example. Fictional documents. Not a live product run.</p>
+
+      <!--
+        Three immutable fixtures. Identity lives in data-claim-id / data-source-id.
+        ledger.js selects by id only; it never infers selection from what was last shown.
+      -->
+      <div id="ledger" class="ledger">
+        <p class="ledger-label ledger-label-claim" aria-hidden="true">Claim</p>
+        <ul class="claims" role="tablist" aria-labelledby="ledger-title" aria-orientation="vertical">
+
+          <li class="claim" role="presentation">
+            <button class="tab" role="tab" type="button" id="t-c1" data-claim-id="c1" aria-controls="p-c1" aria-selected="true">
+              <span class="tab-claim">Reporting is quarterly.</span>
+              <span class="tab-verdict" data-verdict="reproduced">✓ REPRODUCED</span>
+            </button>
+            <div class="panel" role="tabpanel" id="p-c1" aria-labelledby="t-c1" tabindex="0" data-claim-id="c1" data-source-id="s1">
+              <div class="step step-evidence">
+                <p class="label">Primary evidence</p>
+                <p class="source">Sample agreement, Reporting</p>
+                <p class="excerpt">“Reports are delivered quarterly.”</p>
+              </div>
+              <div class="step step-verdict">
+                <p class="label">Verdict</p>
+                <p class="verdict" data-testid="verdict" data-verdict="reproduced">✓ REPRODUCED</p>
+                <p class="explain">Matched to the supplied source.</p>
+              </div>
+              <div class="step step-draft">
+                <p class="label">Draft disposition</p>
+                <div class="draft">
+                  <div class="draft-line" data-testid="draft-line" data-state="filled">Reporting is quarterly.</div>
+                  <p class="disposition" data-testid="disposition">Included</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="claim" role="presentation">
+            <button class="tab" role="tab" type="button" id="t-c2" data-claim-id="c2" aria-controls="p-c2" aria-selected="false" tabindex="-1">
+              <span class="tab-claim">These accounts are audited.</span>
+              <span class="tab-verdict" data-verdict="refuted">× REFUTED</span>
+            </button>
+            <div class="panel" role="tabpanel" id="p-c2" aria-labelledby="t-c2" tabindex="0" data-claim-id="c2" data-source-id="s2">
+              <div class="step step-evidence">
+                <p class="label">Primary evidence</p>
+                <p class="source">Sample accounts, Basis</p>
+                <p class="excerpt">“These accounts are <mark>unaudited</mark>.”</p>
+              </div>
+              <div class="step step-verdict">
+                <p class="label">Verdict</p>
+                <p class="verdict" data-testid="verdict" data-verdict="refuted">× REFUTED</p>
+                <p class="explain">Contradicted by the supplied source.</p>
+              </div>
+              <div class="step step-draft">
+                <p class="label">Draft disposition</p>
+                <div class="draft">
+                  <p class="disposition" data-testid="disposition">Flagged</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="claim" role="presentation">
+            <button class="tab" role="tab" type="button" id="t-c3" data-claim-id="c3" aria-controls="p-c3" aria-selected="false" tabindex="-1">
+              <span class="tab-claim">Retention is improving.</span>
+              <span class="tab-verdict" data-verdict="abstained">— ABSTAINED</span>
+            </button>
+            <div class="panel" role="tabpanel" id="p-c3" aria-labelledby="t-c3" tabindex="0" data-claim-id="c3" data-source-id="none">
+              <div class="step step-evidence">
+                <p class="label">Primary evidence</p>
+                <p class="excerpt absent">No primary evidence supplied.</p>
+              </div>
+              <div class="step step-verdict">
+                <p class="label">Verdict</p>
+                <p class="verdict" data-testid="verdict" data-verdict="abstained">— ABSTAINED</p>
+                <p class="explain">Insufficient evidence. Withheld from the draft.</p>
+              </div>
+              <div class="step step-draft">
+                <p class="label">Draft disposition</p>
+                <div class="draft">
+                  <div class="draft-line" data-testid="draft-line" data-state="empty"></div>
+                  <p class="disposition" data-testid="disposition">Withheld</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- D: product breadth -->
+  <section class="section" aria-labelledby="breadth-title">
+    <div class="wrap split">
+      <h2 id="breadth-title">Across the investment workflow.</h2>
+      <div>
+        <p class="meta scope-label">Planned scope</p>
+        <ol class="flow">
+          <li>Sourcing</li>
+          <li>Screening</li>
+          <li>Diligence</li>
+          <li>Memo drafting</li>
+          <li>IC prep</li>
+          <li>Portfolio monitoring</li>
+          <li>LP reporting</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- E: firm context -->
+  <section class="section" aria-labelledby="context-title">
+    <div class="wrap split">
+      <h2 id="context-title">Your firm’s context belongs in the work.</h2>
+      <p class="prose">Designed around your playbooks, prior decisions and corrections. The aim is to carry that context into each workflow.</p>
+    </div>
+  </section>
+
+  <!-- H: research lineage. Same hairline table language as the ledger.
+       Swap copy by editing the <tr> rows; each cell carries data-label for the stacked mobile layout. -->
+  <section class="section" id="lineage" aria-labelledby="lineage-title">
+    <div class="wrap">
+      <h2 id="lineage-title">Research lineage</h2>
+      <p class="prose lineage-lead">The method behind Fundos: harness design, recursive context handling and evaluation.</p>
+      <table class="lineage">
+        <thead>
+          <tr><th scope="col">Work</th><th scope="col">What it establishes</th><th scope="col">Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Work">keel</td><td data-label="What it establishes">Statistical gates for proposed harness changes.</td><td data-label="Status">private research</td></tr>
+          <tr><td data-label="Work">verdict</td><td data-label="What it establishes">Calibrated verification inside the agent runtime.</td><td data-label="Status">private research</td></tr>
+          <tr><td data-label="Work"><a href="https://github.com/rachittshah/tasc" target="_blank" rel="noopener">tasc</a></td><td data-label="What it establishes">Policy selection and held-out replay; results are self-tests.</td><td data-label="Status">public repo</td></tr>
+          <tr><td data-label="Work"><a href="https://github.com/rachittshah/harness-rlm" target="_blank" rel="noopener">harness-rlm</a></td><td data-label="What it establishes">Recursive decomposition over coding-agent harnesses.</td><td data-label="Status">public repo</td></tr>
+          <tr><td data-label="Work">compiled-rlm</td><td data-label="What it establishes">Offline policy optimization for recursive language models.</td><td data-label="Status">private research</td></tr>
+          <tr><td data-label="Work"><a href="https://github.com/rachittshah/qwen-vc-router" target="_blank" rel="noopener">qwen-vc-router</a></td><td data-label="What it establishes">Deal-screening experiments evaluated on VCBench.</td><td data-label="Status">public repo</td></tr>
+          <tr><td data-label="Work">milbench</td><td data-label="What it establishes">On open data, win rate alone obscured rule breaches.</td><td data-label="Status">self-measured</td></tr>
+          <tr><td data-label="Work"><a href="https://github.com/rachittshah/otoscope" target="_blank" rel="noopener">otoscope</a></td><td data-label="What it establishes">Voice-agent failure attribution; results are self-tests.</td><td data-label="Status">public repo</td></tr>
+        </tbody>
+      </table>
+      <p class="fine lineage-note">Rachitt Shah’s implementations and research; numerical results, where shown, are self-measured, not Fundos performance claims.</p>
+    </div>
+  </section>
+
+  <!-- V: film. Poster first, no autoplay. -->
+  <section class="section" id="film" aria-labelledby="film-title">
+    <div class="wrap">
+      <h2 id="film-title">The film</h2>
+      <p class="prose film-line">45 seconds. Same fixtures, same rules.</p>
+      <video poster="assets/poster-16x9.png" src="assets/fundos-launch-16x9.mp4" controls preload="none" playsinline></video>
+    </div>
+  </section>
+
+  <!-- F: access request -->
+  <section class="section" id="access" aria-labelledby="access-title">
+    <div class="wrap split">
+      <div>
+        <h2 id="access-title">A working relationship starts here.</h2>
+        <p class="prose">For GPs, partners and principals at VC and PE funds.</p>
+        <p class="prose">Request consideration for the private beta. Access is reviewed individually.</p>
+      </div>
+      <div>
+        <a class="button" href="mailto:rachitt@transfrm.in?subject=Fundos%20private%20beta&amp;body=Hi%2C%20I%27d%20love%20to%20try%20out%20Fundos%20by%20Transfrm%20Labs">request access</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="meta">Transfrm Labs · Bengaluru</p></div>
+</footer>
+
+<script src="ledger.js" defer></script>
+</body>
+</html>
